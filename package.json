@@ -2,7 +2,7 @@
   "name": "code-fast-llm",
   "displayName": "code-fast-llm",
   "description": "Copy and pasting code blocks from LLMs takes too long. This extension makes it faster.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Dominic",
   "publisher": "ciciliostudio",
   "repository": {
@@ -47,6 +47,7 @@
     "watch:esbuild": "node esbuild.js --watch",
     "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
     "package": "yarn run check-types && yarn run lint && node esbuild.js --production",
+    "publish": "vsce publish",
     "compile-tests": "tsc -p . --outDir out",
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
