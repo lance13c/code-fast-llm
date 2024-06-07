@@ -3,8 +3,6 @@ import { CodeResponse } from './types.js';
 
 let commandDisposable: vscode.Disposable | undefined;
 
-console.log('init');
-
 export function activate(
   context: vscode.ExtensionContext,
   clipboard: { readText: () => Thenable<string | undefined> } = vscode.env
@@ -34,14 +32,12 @@ export function activate(
           return vscode.window.showErrorMessage('Clipboard text is undefined');
         }
 
-        // Regular expression to check for the presence of "id":"cfllm" within the first 40 characters
         const idPattern = /"id"\s*:\s*"cfllm"/;
         const first40Chars = clipboardText.substring(0, 40);
         if (!idPattern.test(first40Chars)) {
           console.log(
             'Clipboard text does not contain "id":"cfllm" within the first 40 characters. Performing normal paste.',
           );
-          // Execute the default paste command
           await vscode.commands.executeCommand(
             'editor.action.clipboardPasteAction',
           );

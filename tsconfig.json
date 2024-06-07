@@ -1,20 +1,17 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
+    "module": "ESNext", // Use ESNext for module syntax during development
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "sourceMap": true,
+    "rootDir": "src", // Ensure this is set to your source directory
+    "outDir": "dist", // Output directory for compiled files
     "strict": true,
-    "outDir": "./out",
-    "rootDir": ".",
-    "resolveJsonModule": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],
-      "@test/*": ["test/*"]
-    }
+    "types": ["node", "vscode"], // Include node and vscode types
+    "typeRoots": ["./node_modules/@types"],
+    "moduleResolution": "node", // Ensure node module resolution
+    "noEmit": true
   },
-  "include": ["src/**/*", "test/**/*.ts"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "src/test/**/*"] // Exclude node_modules and test files
 }

@@ -1,8 +1,8 @@
-import { activate } from '@/extension';
-import { createMockExtensionContext } from '@test/mockExtensionContext';
-import { createMockVscode } from '@test/mockVscode';
 import * as sinon from 'sinon';
 import * as vscode from 'vscode';
+import { activate } from '../extension.js';
+import { createMockExtensionContext } from './mockExtensionContext.js';
+import { createMockVscode } from './mockVscode.js';
 
 const sandbox = sinon.createSandbox();
 

@@ -1,10 +1,6 @@
 # code-fast-llm README
 
-
-
 ## Features
-
-
 
 ## Release Notes
 
@@ -47,6 +43,7 @@ By following these instructions, the LLM will generate a JSON object that correc
 ## Example
 
 **test.ts**
+
 ```ts
 function greet(name: string): string {
   return `Hello, ${name}!`;
@@ -104,6 +101,7 @@ main();
 ```
 
 **Change JSON**
+
 ```json
 {
   "id": "cfllm",
@@ -125,6 +123,7 @@ main();
 
 Must use the Ctrl + V or Command + V hotkey for this to work when pasting.
 **Expected Output After Pasting**
+
 ```
 // test.ts
 function greet(name: string): string {
@@ -184,6 +183,5 @@ function main() {
 
 main();
 ```
-
 
 ## Contributions
