@@ -1,13 +1,44 @@
-# code-fast-llm README
+# code-fast-llm
+
+Code Fast LLM: A VSCode extension to quickly apply structured code blocks from your clipboard to your editor. Reads clipboard JSON, identifies markers, and inserts, replaces, or deletes code seamlessly.
+
+I've been copy and pasting a lot of code from LLMs. I wanted something that could speed it up.
+
+## Small Example
+
+Copy the following JSON to your clipboard:
+
+```json
+{
+  "id": "cfllm",
+  "codeBlocks": [
+    {
+      "start": "markerStart",
+      "type": "add",
+      "code": "\nconsole.log('Hello, World!');"
+    }
+  ]
+}
+```
+
+Place markerStart in your code:
+
+```txt
+// markerStart
+```
+
+Use the shortcut cmd+v (Mac) or ctrl+v (Windows/Linux) to apply the code blocks.
 
 ## Features
 
-## Release Notes
+- **Apply Code Block**s: Automatically apply JSON-formatted code blocks from your clipboard into your active document.
+- **Smart Pasting**: If the clipboard content does not match the expected format, the extension performs a normal paste action.
+- **Marker Identification**: Finds specific markers in the document to insert, replace, or delete code.
+- **Error Handling**: Provides clear error messages for invalid JSON or missing markers.
 
-### 0.0.1
+## How to Use
 
-- Base extension
-- Injects code where it should go.
+Use this system prompt for your LLM.
 
 ### System Prompt (copy this)
 
@@ -40,7 +71,7 @@ Ensure the markers (start and end) are accurate and use regular expressions to h
 By following these instructions, the LLM will generate a JSON object that correctly specifies the code updates to be made in the file.
 ```
 
-## Example
+## Larger Example
 
 **test.ts**
 
@@ -184,4 +215,13 @@ function main() {
 main();
 ```
 
-## Contributions
+## Release Notes
+
+### 0.0.2
+
+- Fixes key-bindings, they are no longer broken.
+
+### 0.0.1
+
+- Base extension
+- Injects code where it should go.
