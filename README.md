@@ -2,7 +2,9 @@
 
 Code Fast LLM: A VSCode extension to quickly apply structured code blocks from your clipboard to your editor. Reads clipboard JSON, identifies markers, and inserts, replaces, or deletes code seamlessly.
 
-I've been copy and pasting a lot of code from LLMs. I wanted something that could speed it up.
+## Why create this?
+
+I often copy and paste code from LLMs and wanted to speed up this process. This extension allows you to instruct the LLM to output only the necessary changes, then apply them all in one command. Works for any text. It's especially useful for larger files. The key question is, how accurate can we make an LLM be at this?
 
 ## Small Example
 
@@ -225,3 +227,7 @@ main();
 
 - Base extension
 - Injects code where it should go.
+
+## Future Vision
+
+Imagine controlling this with voice commands. With hot-reloading, save and undo features, file system understanding, and voice controls, you could practically talk to your code.
