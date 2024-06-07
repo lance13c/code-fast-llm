@@ -1,4 +1,4 @@
-import * as esbuild from 'esbuild';
+const esbuild = require('esbuild');
 
 esbuild
   .build({
