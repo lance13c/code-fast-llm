@@ -15,7 +15,7 @@
   "categories": [
     "Other"
   ],
-  "main": "./dist/extension.js",
+  "main": "./dist/extension.cjs",
   "contributes": {
     "commands": [
       {
@@ -37,6 +37,16 @@
         "command": "code-fast-llm.applyCodeBlocks",
         "key": "ctrl+v",
         "when": "editorTextFocus"
+      },
+      {
+        "key": "ctrl+shift+v",
+        "command": "code-fast-llm.bypassPaste",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "cmd+shift+v",
+        "command": "code-fast-llm.bypassPaste",
+        "when": "editorTextFocus"
       }
     ]
   },
@@ -57,6 +67,7 @@
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
+    "@types/js-yaml": "^4.0.9",
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
     "@types/sinon": "^17.0.3",
@@ -79,5 +90,9 @@
     "typescript": "^5.4.5",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "yaml": "^2.4.3",
+    "zod": "^3.23.8"
   }
 }

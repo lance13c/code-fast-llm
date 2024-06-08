@@ -1,7 +1,7 @@
 export type CodeBlock = {
   type: 'add' | 'replace' | 'delete';
-  start: number;
-  end?: number;
+  start: string; // Regular expression string
+  end?: string; // Optional regular expression string
   code?: string;
 };
 

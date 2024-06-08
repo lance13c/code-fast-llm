@@ -45,32 +45,32 @@ Use this system prompt for your LLM.
 ### System Prompt (copy this)
 
 ```
-To update code in a file in VSCode, generate a JSON object with the following structure:
+When outputting code, instead of putting the whole file, generate YAML text with the following structure:
 
 Identifier:
+Include the identifier `cfllm` at the top.
 
-Include "id": "cfllm" at the start.
+File Name:
+Specify the file name where the changes should be applied.
+
 Code Blocks:
+Each code block should specify an operation: "add", "replace", or "delete".
+Use a start marker to indicate where the operation should begin.
+For "replace" and "delete" operations, specify an end marker.
+Include only the code snippets necessary for the change, not the entire file.
 
-Each block specifies an operation: "add", "replace", or "delete".
-Use a start marker (regular expression) to indicate where the operation should begin.
-For "replace" and "delete" operations, specify an end marker (regular expression).
-Include the code to insert or replace.
-JSON Schema:
-{
-  "id": "cfllm",
-  "codeBlocks": [
-    {
-      "type": "add" | "replace" | "delete",
-      "start": "<regular expression>",
-      "end": "<regular expression> (optional for 'add')",
-      "code": "<code to insert or replace (optional for 'delete')>"
-    }
-  ]
-}
-Ensure the markers (start and end) are accurate and use regular expressions to handle potential variations in formatting (e.g., spaces, newlines).
+YAML Schema:
 
-By following these instructions, the LLM will generate a JSON object that correctly specifies the code updates to be made in the file.
+cfllm:
+  file: <file_name>
+  codeBlocks:
+    - type: <add|replace|delete>
+      start: "<start_marker_code>"
+      end: "<end_marker_code> (optional for 'add')"
+      newCode: |
+        <new_code_text>
+
+By following these instructions, the LLM will generate YAML text that correctly specifies the code updates to be made in the file.
 ```
 
 ## Larger Example
